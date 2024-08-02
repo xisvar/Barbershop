@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Young Mini</title>
+    <link rel="shortcut icon" type="icon" href="Ymini.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script defer src="index.js"></script>
+    <script>
+        (function() {
+            emailjs.init('edMWaFdxmlveaD8nB'); // Replace 'YOUR_USER_ID' with your EmailJS user ID
+        })();
+    </script>
+    <style>
+        body{
+            background-color:  #1C1C1D;
+            color: white;
+        }
+
+        a{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="">
+        <img src="logoName.png" class="icon" alt="">
+        <nav>
+            <ul class="nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="info.html" class="wbb">INFORMATION</a></li>
+                <li><a href="schedule.html">BOOK A DATE</a></li>
+            </ul>
+        </nav>
+
+        <button class="navbar-burger none" onclick="toggleMenu()"></button>
+        <nav class="menu none">
+          <a href="index.html" style="animation-delay: 0.1s">Home</a>
+          <a href="gallery.html" style="animation-delay: 0.2s">Gallery</a>
+          <a href="info.html" style="animation-delay: 0.3s">Information</a>
+          <a href="schedule.html" style="animation-delay: 0.4s">Schedule</a>
+        </nav>
+    </header>
+    <section class="frame" id="section3">
+        <div class="flex">
+            <div class="col">
+                <h2 class="header3">ABOUT YOUNG MINI</h2>
+
+                <p class="justify">Young Mini believes that a great haircut is more than just a style – As you should recon, it’s an experience, it's steeze. With over seasoned expertise in the art of barbering, I , Young Mini, have a passion for precision and a keen eye for detail. Trained in the latest techniques and committed to continuous learning, I deliver personalized services that cater to each client’s unique personality and preferences. My welcoming and relaxed atmosphere ensures you’ll leave feeling not just refreshed, but truly transformed.
+                </p>
+                <br>
+                <form id="contactform">
+                    <div class="row"> 
+                        <input type="text" name="Firstname" class="mt2" id="sub" placeholder="Firstname" required>
+                        <input type="text" name="Lasstname" class="mt2" id="sub" placeholder="Lastname" required>
+                    </div>
+                    <input type="email" name="email" class="mt2" id="sub" placeholder="Email Address" required>
+                    <br>
+                    <input type="text" name="Message" class="mt2 " id="sub" placeholder="Enter your Message" required>
+                    <br>
+                    <button onclick="" class="sub mt2" type="submit">Submit</button>
+                </form>
+            </div>
+
+            <img src="images/Me.jpg" class="mid mt2" alt="">
+        </div>
+    </section>
+
+    <section class="frame footer">
+        <div class="flex">
+            <div class="float">
+                <h4 class="white">SUBSCRIBE</h4>
+                <p class="white mt2">Sign up with your email address to recieve news and <br> updates.</p>
+                <form action="">
+                    <input type="email" name="email" class="mt2" id="sub" placeholder="Email Address" required>
+                    <button class="sub mt2" type="submit">Sign Up</button>
+                </form>
+                
+            </div>
+
+            <div class="flex">
+                <ul class="">
+                    <h4 class="white">SITE MAP</h4>
+                    <br>
+                    <li><a class="white" href="gallery.html">GALLERY</a></li>
+                    <li><a class="white" href="info.html">INFORMATION</a></li>
+                    <li><a class="white" href="schedule.html">BOOK A DATE</a></li>
+                    <li><a class="white" href="#">LOGIN</a></li>
+                </ul>
+    
+                <ul class="">
+                    <h4 class="white">FOLLOW</h4>
+                    <br>
+                    <li><a class="white" href="#">INSTAGRAM</a></li>
+                    <li><a class="white" href="#">TWITTER</a></li>
+                    <li><a class="white" href="#">WHATSAPP</a></li>
+                    <li><a class="white" href="#">FACEBOOK</a></li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <div class="center mt">
+            <h1 class="herotext white">YOUNG MINI</h1>
+        </div>
+    </section>
+
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const serviceID = 'service_l8bdy6x'; // Replace with your EmailJS service ID
+            const templateID = 'template_ndsg6gr'; // Replace with your EmailJS template ID
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then((response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Your message has been sent successfully!');
+                    document.getElementById('contactForm').reset();
+                }, (error) => {
+                    console.error('FAILED...', error);
+                    alert('There was a problem sending your message.');
+                });
+        });
+    </script>
+</body>
+</html>
